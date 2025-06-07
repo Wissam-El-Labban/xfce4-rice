@@ -12,4 +12,31 @@ xfconf-query -c xsettings -p /GTK/CursorThemeName -s "yaru" -t string --create
 
 xfconf-query -c xfwm4 -p /general/theme -s "Yaru" -t string --create
 
-xfconf-query -c xfce4-panel -p /panels -r -R
+sudo apt install plank -y
+
+mkdir -p ~/.config/autostart
+
+
+
+cat <<EOF > ~/.config/autostart/plank.desktop
+
+[Desktop Entry]
+
+Type=Application
+
+Exec=plank
+
+Hidden=false
+
+X-GNOME-Autostart-enabled=true
+
+Name=Plank
+
+Comment=Dock
+
+EOF
+
+
+plank &
+
+
