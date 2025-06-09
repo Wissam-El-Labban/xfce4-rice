@@ -39,6 +39,27 @@ Comment=Dock
 EOF
 
 
-plank &
+# setting up wallpaper
+
+xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitorrdp0/workspace0/last-image --create -t string -s "$(pwd)/xfce-rabbit.png"
+
+xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitorrdp0/workspace1/last-image --create -t string -s "$(pwd)/xfce-rabbit.png"
+
+xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitorrdp0/workspace2/last-image --create -t string -s "$(pwd)/xfce-rabbit.png"
+
+xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitorrdp0/workspace3/last-image --create -t string -s "$(pwd)/xfce-rabbit.png"
+
+# adjusting wallpaper size
+
+xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitorrdp0/workspace0/image-style --create -t int -s 3
+
+xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitorrdp0/workspace1/image-style --create -t int -s 3
+
+xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitorrdp0/workspace2/image-style --create -t int -s 3
+
+xfconf-query -c xfce4-desktop -p /backdrop/screen0/monitorrdp0/workspace3/image-style --create -t int -s 3
 
 
+xfdesktop --reload
+
+nohup plank & 
